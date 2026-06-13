@@ -186,7 +186,7 @@ if ($_SESSION["admin"] == 1) {
           <div class="card dashboard-card text-center mb-4 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">New Vehicle Check</h5>
-              <p class="card-text">Begin Vehcile Checksheet</p>
+              <p class="card-text">Begin Vehicle Checksheet</p>
               <a href="vehiclecheck.php" class="btn btn-success">Add Job</a>
             </div>
           </div>
