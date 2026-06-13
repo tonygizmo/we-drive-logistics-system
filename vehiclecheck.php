@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-$userID = $_SESSION['user_id'];
+$userID = $_SESSION['id'];
 
 if (isset($_POST['submitCheck'])) {
 

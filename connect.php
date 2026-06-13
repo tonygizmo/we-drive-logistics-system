@@ -1,5 +1,4 @@
 <?php
-session_start();
   $db_host = 'localhost';
   $db_user = 'u452006220_WeDriveApp';
   $db_password = 'Coast49tower!';
