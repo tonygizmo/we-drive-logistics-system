@@ -6,8 +6,7 @@ error_reporting(E_ALL);
 
 session_start();
 include 'connect.php';
-session_start();
-include 'connect.php';
+
 // Redirect if not logged in
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -102,6 +101,7 @@ if (mysqli_query($mysqli, $sql)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <h1 class="h2">Welcome, <?= htmlspecialchars($_SESSION["username"]); ?></h1>
     <title>Vehicle Check | We-Drive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
