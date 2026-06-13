@@ -72,6 +72,8 @@ if ($_SESSION["admin"] == 1) {
         <li class="nav-item"><a class="nav-link text-white" href="manageuser.php">Manage Users</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="addjob.php">Add Job</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="viewjob.php">View Jobs</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="vehiclecheckdash.php">Checks Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="vehiclecheck.php">Vehicle Checks</a></li>
         <?php else: ?>
         <li class="nav-item"><a class="nav-link text-white" href="userjobs.php">My Jobs</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="vehiclecheckdash.php">Checks Dashboard</a></li>
