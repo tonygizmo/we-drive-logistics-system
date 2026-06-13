@@ -7,31 +7,62 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-$sql = "SELECT vc.*, u.username 
-        FROM vehicle_checks vc
-        LEFT JOIN users u ON vc.user_id = u.id
-        WHERE vc.defects_found = 1
-           OR vc.vehicle_safe_to_use = 0
-           OR vc.tyres_ok = 0
-           OR vc.lights_ok = 0
-           OR vc.indicators_ok = 0
-           OR vc.brakes_ok = 0
-           OR vc.steering_ok = 0
-           OR vc.mirrors_ok = 0
-           OR vc.horn_ok = 0
-           OR vc.windscreen_ok = 0
-           OR vc.wipers_ok = 0
-           OR vc.washers_ok = 0
-           OR vc.oil_ok = 0
-           OR vc.coolant_ok = 0
-           OR vc.fuel_ok = 0
-           OR vc.bodywork_ok = 0
-           OR vc.load_secure_ok = 0
-        ORDER BY vc.created_at DESC";
+if ($_SESSION["admin"] == 1) {
+
+    $sql = "SELECT vc.*, u.username
+            FROM vehicle_checks vc
+            LEFT JOIN users u ON vc.user_id = u.id
+            WHERE vc.defects_found = 1
+               OR vc.vehicle_safe_to_use = 0
+               OR vc.tyres_ok = 0
+               OR vc.lights_ok = 0
+               OR vc.indicators_ok = 0
+               OR vc.brakes_ok = 0
+               OR vc.steering_ok = 0
+               OR vc.mirrors_ok = 0
+               OR vc.horn_ok = 0
+               OR vc.windscreen_ok = 0
+               OR vc.wipers_ok = 0
+               OR vc.washers_ok = 0
+               OR vc.oil_ok = 0
+               OR vc.coolant_ok = 0
+               OR vc.fuel_ok = 0
+               OR vc.bodywork_ok = 0
+               OR vc.load_secure_ok = 0
+            ORDER BY vc.created_at DESC";
+
+} else {
+
+    $userID = $_SESSION['id'];
+
+    $sql = "SELECT vc.*, u.username
+            FROM vehicle_checks vc
+            LEFT JOIN users u ON vc.user_id = u.id
+            WHERE vc.user_id = '$userID'
+            AND (
+                vc.defects_found = 1
+                OR vc.vehicle_safe_to_use = 0
+                OR vc.tyres_ok = 0
+                OR vc.lights_ok = 0
+                OR vc.indicators_ok = 0
+                OR vc.brakes_ok = 0
+                OR vc.steering_ok = 0
+                OR vc.mirrors_ok = 0
+                OR vc.horn_ok = 0
+                OR vc.windscreen_ok = 0
+                OR vc.wipers_ok = 0
+                OR vc.washers_ok = 0
+                OR vc.oil_ok = 0
+                OR vc.coolant_ok = 0
+                OR vc.fuel_ok = 0
+                OR vc.bodywork_ok = 0
+                OR vc.load_secure_ok = 0
+            )
+            ORDER BY vc.created_at DESC";
+}
 
 $result = mysqli_query($mysqli, $sql);
 $failedCount = mysqli_num_rows($result);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
