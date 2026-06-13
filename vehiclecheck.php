@@ -1,4 +1,11 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+include 'connect.php';
 session_start();
 include 'connect.php';
 // Redirect if not logged in
@@ -83,11 +90,11 @@ if (isset($_POST['submitCheck'])) {
                 '$defectNotes',
                 '$vehicleSafe'
             )";
-
-    mysqli_query($mysqli, $sql);
-
+if (mysqli_query($mysqli, $sql)) {
     header("Location: vehiclecheck.php?success=1");
     exit();
+} else {
+    die("Database insert failed: " . mysqli_error($mysqli));
 }
 ?>
 
