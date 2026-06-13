@@ -63,6 +63,7 @@ if ($_SESSION["admin"] == 1) {
 
 $result = mysqli_query($mysqli, $sql);
 $failedCount = mysqli_num_rows($result);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
