@@ -70,6 +70,7 @@ if ($_SESSION["admin"] == 1) {
         <li class="nav-item"><a class="nav-link text-white" href="welcome.php">Dashboard</a></li>
         <?php if ($_SESSION["admin"] == 1): ?>
         <li class="nav-item"><a class="nav-link text-white" href="manageuser.php">Manage Users</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="vehiclecheckdash.php">Checks Dashboard</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="vehiclecheck.php">Vehicle Checks</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="addjob.php">Add Job</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="viewjob.php">View Jobs</a></li>
