@@ -105,7 +105,22 @@ if (isset($_POST['submitCheck'])) {
 </head>
 
 <body>
-
+ <!-- Sidebar -->
+ <nav id="sidebar" class="col-md-2 bg-dark text-white p-3">
+      <h4 class="text-center">We-Drive</h4>
+      <ul class="nav flex-column mt-4">
+        <li class="nav-item"><a class="nav-link text-white" href="welcome.php">Dashboard</a></li>
+        <?php if ($_SESSION["admin"] == 1): ?>
+        <li class="nav-item"><a class="nav-link text-white" href="manageuser.php">Manage Users</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="addjob.php">Add Job</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="viewjob.php">View Jobs</a></li>
+        <?php else: ?>
+        <li class="nav-item"><a class="nav-link text-white" href="userjobs.php">My Jobs</a></li>
+        <?php endif; ?>
+        <li class="nav-item mt-4"><a class="nav-link btn btn-warning text-dark" href="reset-password.php">Reset Password</a></li>
+        <li class="nav-item mt-2"><a class="nav-link btn btn-danger" href="logout.php">Logout</a></li>
+      </ul>
+    </nav>
 <div class="container mt-4 mb-5">
 
     <h2 class="mb-3">Daily Vehicle Check</h2>
