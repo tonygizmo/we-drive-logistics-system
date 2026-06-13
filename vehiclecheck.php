@@ -105,8 +105,11 @@ if (isset($_POST['submitCheck'])) {
 </head>
 
 <body>
- <!-- Sidebar -->
- <nav id="sidebar" class="col-md-2 bg-dark text-white p-3">
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-2 bg-dark text-white p-3">
       <h4 class="text-center">We-Drive</h4>
       <ul class="nav flex-column mt-4">
         <li class="nav-item"><a class="nav-link text-white" href="welcome.php">Dashboard</a></li>
@@ -121,6 +124,7 @@ if (isset($_POST['submitCheck'])) {
         <li class="nav-item mt-2"><a class="nav-link btn btn-danger" href="logout.php">Logout</a></li>
       </ul>
     </nav>
+
 <div class="container mt-4 mb-5">
 
     <h2 class="mb-3">Daily Vehicle Check</h2>
@@ -254,6 +258,7 @@ if (isset($_POST['submitCheck'])) {
     </table>
 
 </div>
-
+</div>
+</div>
 </body>
 </html>
