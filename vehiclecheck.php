@@ -95,13 +95,14 @@ if (mysqli_query($mysqli, $sql)) {
 } else {
     die("Database insert failed: " . mysqli_error($mysqli));
 }
+
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <h1 class="h2">Welcome, <?= htmlspecialchars($_SESSION["username"]); ?></h1>
     <title>Vehicle Check | We-Drive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -146,6 +147,7 @@ if (mysqli_query($mysqli, $sql)) {
 <div class="container mt-4 mb-5">
 
     <h2 class="mb-3">Daily Vehicle Check</h2>
+    <h1 class="h2">Welcome, <?= htmlspecialchars($_SESSION["username"]); ?></h1>
 
     <?php if (isset($_GET['success'])) { ?>
         <div class="alert alert-success">
