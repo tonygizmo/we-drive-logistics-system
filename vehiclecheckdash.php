@@ -129,7 +129,7 @@ $myFailedChecks = $mysqli->query("
               <div class="card-body">
                 <h5 class="card-title">Failed / Defect Checks</h5>
                 <p class="card-text display-6"><?= $failedChecks ?></p>
-                <a href="failedvehiclechecks.php" class="btn btn-danger">View Defects</a>
+                <a href="failedchecks.php" class="btn btn-danger">View Defects</a>
               </div>
             </div>
           </div>
