@@ -66,7 +66,44 @@ $deliveryContact = implode(' ', array_filter([
 ]));
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<div class="container-fluid">
+    <div class="row">
 
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 bg-dark text-white p-3">
+            <h4 class="text-center">We-Drive</h4>
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="welcome.php">Dashboard</a>
+                </li>
+
+                <?php if ($_SESSION["admin"] == 1): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="manageuser.php">Manage Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="addjob.php">Add Job</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="viewjob.php">View Jobs</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="userjobs.php">My Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="vehiclecheck.php">Vehicle Check</a>
+                    </li>
+                <?php endif; ?>
+
+                <li class="nav-item mt-4">
+                    <a class="nav-link btn btn-warning text-dark" href="reset-password.php">Reset Password</a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a class="nav-link btn btn-danger" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </nav>
 
 <div class="row">
     <div class="col-12 mb-3">
@@ -172,6 +209,8 @@ $deliveryContact = implode(' ', array_filter([
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <script>
 function flagJob(form) {
